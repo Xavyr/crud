@@ -15,28 +15,28 @@ app.use(express.static(path.join(__dirname, './../client')));
 
 //responds to the findAll button-- dumping all contents into the data div
 app.get('/findAll', databaseController.findAll, (req, res, next) => {
-	res.send(res.locals.databaseFindings);
+  res.send(res.locals.databaseFindings);
 });
 
 //responds to the insertOne record
 app.post('/insertOne', databaseController.insertOne, (req, res, next) => {
-	res.send(res.locals.databaseFindings);
+  res.send(res.locals.databaseFindings);
 });
 
 //queries for one record out of the db
 app.post('/findOne', databaseController.findOne, (req, res, next) => {
-	console.log('db', res.locals.databaseFindings);
-	res.send(res.locals.databaseFindings);
+  console.log('db', res.locals.databaseFindings);
+  res.send(res.locals.databaseFindings);
 });
 
 //removes one record from the db
 app.delete('/removeOne', databaseController.removeOne, (req, res, next) => {
-	res.end();
+  res.end();
 });
 
 //updates one selected record from the database
 app.put('/updateOne', databaseController.updateOne, (req, res, next) => {
-	res.send('updateOne via put');
+  res.send('updateOne via put');
 });
 
 
